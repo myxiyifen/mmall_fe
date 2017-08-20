@@ -5,4 +5,8 @@
 * @Last Modified time: 2017-08-17 16:31:50
 */
 'use script';
-console.log('i am global');
+// console.log('i am global');
+require('./layout.css');
+// require('node_modules/font-awesome/css/font-awesome.css/font-awesome.min.css');
+require('node_modules/font-awesome/css/font-awesome.min.css');
+require('./footer/index.css');

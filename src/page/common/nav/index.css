@@ -1,0 +1,28 @@
+/**
+ * User: xiyifen
+ * Date: 2017/8/19
+ * Time: 21:53
+ */
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+/*丧失部分*/
+.nav .user{
+    float: left;
+}
+.nav .user.login{
+    display: none;
+}
+.nav .user .link{
+    margin-right: 5px;
+}
+/*导航部分*/
+.nav .nav-list{
+    float:right;
+}
+.nav .nav-list .nav-item{
+    display: inline-block;/*让<li>标签排成一行*/
+    margin-left:5px;
+}
