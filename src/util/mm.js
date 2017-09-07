@@ -29,10 +29,22 @@ var _mm = {
                 }
                 // 请求数据错误
                 else if(1 === res.status){
+                    alert(param);
+                    // alert(param.error);
+                    // alert(res.msg+"55555555555");
+                    // alert(res+"88888888");
+                    /**
+                     *  param.error=function(errMsg){
+                     *  alert(errMsg+"3333");
+                      *  formError.show(errMsg);
+                      *  })
+                     */
                     typeof param.error === 'function' && param.error(res.msg);
                 }
             },
+            //当请求的url路径不对的时候就执行此方法
             error       : function(err){
+                // alert(err.statusText+"99999999999") err.status=not found
                 typeof param.error === 'function' && param.error(err.statusText);
             }
         });
@@ -43,7 +55,7 @@ var _mm = {
     },
     //获取url参数
     getUrlParam:function (name){
-        //www.happymmall.com/login.do?username=1  取得username=1
+        //www.happymmall.com/user-login.do?username=1  取得username=1
         var reg= new RegExp('(^|&)'+name+'=([^&]*)(&|$)');
         var result =window.location.search.substr(1).match(reg);
         return result?decodeURIComponent(result[2]):null;
@@ -81,7 +93,7 @@ var _mm = {
     },
     // 统一登录处理
     doLogin : function(){
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome:function () {
         window.location.href='./index.html';

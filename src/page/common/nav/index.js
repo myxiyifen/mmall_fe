@@ -1,5 +1,8 @@
-/**
- * Created by User on 2017/8/19.
+/*
+ * @Author: Rosen
+ * @Date:   2017-05-17 14:17:01
+ * @Last Modified by:   Rosen
+ * @Last Modified time: 2017-05-22 12:21:05
  */
 
 'use strict';
@@ -10,6 +13,7 @@ var _cart   = require('service/cart-service.js');
 // 导航
 var nav = {
     init : function(){
+        // alert("dddddddddddd");
         this.bindEvent();
         this.loadUserInfo();
         this.loadCartCount();
@@ -19,6 +23,7 @@ var nav = {
         // 登录点击事件
         $('.js-login').click(function(){
             _mm.doLogin();
+
         });
         // 注册点击事件
         $('.js-register').click(function(){
@@ -36,10 +41,13 @@ var nav = {
     // 加载用户信息
     loadUserInfo : function(){
         _user.checkLogin(function(res){
+            // alert(res.username+"djdjjdjdjdjjdj");
+            // console(res.username+"6666666");
             $('.user.not-login').hide().siblings('.user.login').show()
                 .find('.username').text(res.username);
         }, function(errMsg){
             // do nothing
+            // alert(errMsg+"dddlkkkkkk");
         });
     },
     // 加载购物车数量
